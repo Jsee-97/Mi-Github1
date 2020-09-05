@@ -1,0 +1,39 @@
+Este archivo muestra los detalles de como debemos trabajar y comandos para diferentes plataformas
+
+#Editor de texto VIM
+vim nombreDelArchivo.formato  		--> Para editar archivos de texto
+ESC					--> Comienza a utilizar los comandos de VIM
+:w					--> Guardar archivo
+:q					--> Salir sin guardar
+:wq					--> Guardar y salir con un solo comando
+dd					--> Eliminar línea actual
+v					--> Seleccionar líneas
+p					--> pegar
+python3 -m nombreDelArchivo.formato	--> Abre el python3 desde consola linux (tomando como referencia el archivo actual)
+q!; python3 -m nombreDelArchivo.formato	--> Abre el python3 "desde vim" (tomando como referencia el archivo actual)
+u 					--> Volver (Es como el CTRL + Z de windows)
+CTRL + R				--> Rehacer (Es lo inverso de CTRL + Z de Windows)
+
+
+
+#Github
+git pull                   --> Baja la información del repositorio web y actualiza repositorio local
+git add nombre_de_archivo  --> Agregando archivo o carpeta al repositorio
+git commit -m "comentario" --> Comitando y agregando comentarios de la actualización
+git commit -u "a           --> Comitando archivos o carpetas eliminadas
+git push 		   --> Subiendo archivos al repositorio web para actualizar
+
+
+#Nombres de archivos, carpetas, variables, entre otros
+variable           -->nombres de variables comienzan con minúsculas
+variableDePrueba   -->Si la variable tiene dos palabras, debe usarse mayúscula a partir de la segunda palabra
+SQL		   -->Palabras reservadas de SQL deben estar en mayúsculas
+
+
+#librerías externas usadas (Toda librería que sea instalada, debe estar aquí
+
+
+
+
+
+
