@@ -2,6 +2,7 @@ Este archivo muestra los detalles de como debemos trabajar y comandos para difer
 
 #Editor de texto VIM
 vim nombreDelArchivo.formato  		--> Para editar archivos de texto
+insert					--> Empezar a escribir
 ESC					--> Comienza a utilizar los comandos de VIM
 :w					--> Guardar archivo
 :q					--> Salir sin guardar
@@ -10,9 +11,23 @@ dd					--> Eliminar línea actual
 v					--> Seleccionar líneas
 p					--> pegar
 python3 -m nombreDelArchivo.formato	--> Abre el python3 desde consola linux (tomando como referencia el archivo actual)
-q!; python3 -m nombreDelArchivo.formato	--> Abre el python3 "desde vim" (tomando como referencia el archivo actual)
+:! python3 -m nombreDelArchivo.formato	--> Abre el python3 "desde vim" (tomando como referencia el archivo actual)
 u 					--> Volver (Es como el CTRL + Z de windows)
 CTRL + R				--> Rehacer (Es lo inverso de CTRL + Z de Windows)
+
+
+#Linux
+pdw			--> Saber ubicación actual
+cd nombreDeCarpeta	--> Cambiar de carpeta
+cd maindir/subdir	--> Acceder a subcarpetas
+cd ../			--> Cambiar a carpeta superior
+
+
+
+#Python
+Colocar comentarios es importante para monitoreo
+Comentar mas de una línea es con """Comentario de varias líneas"""
+
 
 
 
@@ -22,6 +37,8 @@ git add nombre_de_archivo  --> Agregando archivo o carpeta al repositorio
 git commit -m "comentario" --> Comitando y agregando comentarios de la actualización
 git commit -u "a           --> Comitando archivos o carpetas eliminadas
 git push 		   --> Subiendo archivos al repositorio web para actualizar
+
+
 
 
 #Nombres de archivos, carpetas, variables, entre otros
