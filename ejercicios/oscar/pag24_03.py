@@ -21,11 +21,11 @@ while (decision not in range (1,4)):
 else:
     if decision == 1:
         suma = num1 + num2
-        print(f'la suma de los dos números es {suma}')
+        print(f'Suma: {num1} + {num2} = {suma}')
         
     if decision == 2:
         resta = num1 - num2
-        print(f'la resta de los dos números es {resta}')
+        print(f'Resta: {num1} - {num2} = {resta}')
     
     if decision == 3:
         print(f'Salió al apretar el botón {decision}')
