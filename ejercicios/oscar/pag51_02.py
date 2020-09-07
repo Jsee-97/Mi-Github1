@@ -44,9 +44,16 @@ Considere os seguintes preços:
 Banana: 3.50 Melancia: 7.50 Morango: 5.00
 Dica: Você pode armazenar os dados de frutas e seus respectivos preços em um dicionário.
 '''
-
-diccionario = {}
+#Condiciones
+lista = []
 cond = 0
+
+#Funciones
+
+def cls():
+    print('\n' * 100)
+    
+#While General del menu principal
 
 while (cond == 0):
     decision = int(input(f'''
@@ -56,15 +63,33 @@ while (cond == 0):
         Presione 3 para salir
 '''))
 
+
+#While descartando que el número esté entre 1 y 3    
     while (decision not in range (1,4)):
+        cls()
         decision = int(input(f'Ingresó el número {decision}\n'
                            f'Por favor ingrese un valor entre 1-3: '))
+
+#Opciones si el número está entre 1-3
     else:
+        
+
+        #Mostrar lista de productos
         if decision == 1:
-            print("No hay elementos en la lista")
+            cls()
+            if len(lista) <= 0:
+                print('La cesta está vacía')
+            
+            else:
+                print('\n'* 100)               
+                print('Su Cesta tiene los siguientes productos')
+                for index, element in enumerate(lista):
+                    print(f'Producto {index + 1}: {element}')
 
 
+        #Agregar productos
         if decision == 2:
+            cls()
             fruta = int(input('''
                     Menu de frutas:
 
@@ -72,22 +97,31 @@ while (cond == 0):
                     1: Cambur:
                     2: Patilla:
                     3: Fresa:
-            '''))
-            if fruta == 1:
-                diccionario = {'fruta':'Cambur', 'prueba':'prueba1','prueba2':'prueba4'}
-                print(diccionario)
-            elif fruta == 2:
-                diccionario = {'fruta2':'Patilla'}
+        '''))
+
+            if fruta not in range(1,4):
+                cls()
+                print('Producto no está en la lista')
+
+            elif fruta == 1:
+                cls()
+                lista.append('Cambur')
+                print(f'\n\nSe agregó el producto {lista[-1]}\n\n')
+            
+                elif fruta == 2:
+                cls()
+                lista.append('Patilla')
+                print(f'\n\nSe agregó el producto {lista[-1]}\n\n')
+ 
             elif fruta == 3:
-                diccionario = {'fruta3':'Fresa'}
+                cls()
+                lista.append('Fresa')
+                print(f'\n\nSe agregó el producto {lista[-1]}\n\n')
         
+        #Opción para Salir
         if decision == 3:
+            cls()
             print(f'Salió al apretar el botón {decision}')
-            cond = 1
-
-
-for chave in diccionario.keys():
-    print(f'campo: {chave}:', diccionario[chave])
-
-
+            cond = 1 
 exit()
+
