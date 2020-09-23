@@ -5,6 +5,12 @@ saída: 'Olá Lalo! Tudo bem com você?'
 ) Reescreva o exercício da quitanda do capítulo 2 separando as operações em funções.
 '''
 
-saludo(argumento):
-    print(f'Hola {argumento}, todo bien y tú?')
+def saludo(arg):
+    print(f'Hola {arg}, todo bien y tú?')
 
+
+name = input('Ingresa tu nombre')
+
+saludo(name)
+
+exit()
