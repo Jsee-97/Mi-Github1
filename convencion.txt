@@ -2,7 +2,7 @@ Este archivo muestra los detalles de como debemos trabajar y comandos para difer
 
 #Editor de texto VIM
 vim nombreDelArchivo.formato  		--> Para editar archivos de texto
-insert					--> Empezar a escribir
+	insert					--> Empezar a escribir
 ESC					--> Comienza a utilizar los comandos de VIM
 :w					--> Guardar archivo
 :q					--> Salir sin guardar
