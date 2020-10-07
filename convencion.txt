@@ -17,11 +17,11 @@ CTRL + R				--> Rehacer (Es lo inverso de CTRL + Z de Windows)
 
 
 #Linux
-pdw			--> Saber ubicación actual
-cd nombreDeCarpeta	--> Cambiar de carpeta
-cd maindir/subdir	--> Acceder a subcarpetas
-cd ../			--> Cambiar a carpeta superior
-
+pdw			 				--> Saber ubicación actual
+cd nombreDeCarpeta					--> Cambiar de carpeta
+cd maindir/subdir					--> Acceder a subcarpetas
+cd ../							--> Cambiar a carpeta superior
+grep -r -i "palabra o palabras" /Dirección de Carpeta   --> Buscar texto dentro de archivos
 
 
 #Python
