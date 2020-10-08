@@ -1,4 +1,4 @@
-nombre = input("Ingresa tu nombre")
+nombre = input("Ingresa tu nombre: ")
 contador = 0
 arreglo = []
 for elemento in nombre:
@@ -7,7 +7,7 @@ for elemento in nombre:
         contador+=1
 
         print("La letra '{}'es equivalente en ASCII a '{}'".format(elemento.upper(),ord(elemento))) 
-     else:
+    else:
          break
 
 aux1 = ord(arreglo[0])     
