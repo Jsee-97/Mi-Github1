@@ -13,10 +13,6 @@ Aquí hay una muestra de cómo ejecutar este programa.
 #Solicitar cadena de texto
 string = input("Escriba el texto que será usado: ")
 lista = []
-lista2 = []
-lista3 = []
-lista4 = []
-x = 0
 lista_asc = []
 cant = int(input("Cantidad de dígitos: "))
 #taman = len(var)
@@ -30,23 +26,18 @@ for c in string:
     asc = ord(c)
     lista.append(asc)
   
-#print(f'Lista normal en ASCII \n{lista}\n')
+print(f'Lista normal en ASCII \n{lista}\n')
 
-#obtener lista ASCII con las mayúsculas
-
-for c in range(cant):
-    asc = str.upper(string[x])
-    x += 1
+#obtener lista ASCII con las mayúsculas necesarias
+lista2 = []
+for c in lista:
+    asc = ord(c)
     lista2.append(asc)
 
-string2 = ''.join(lista2)
+print(lista2)
 
-for c in string2:
-    ascc = ord(c)
-    lista3.append(ascc)
 
-print(lista)
-print(lista3)
+
 
 
 #Transformar de ACSII a Carácter
@@ -55,8 +46,11 @@ for c in lista:
     lista_asc.append(ch)
 
 #Sumar o restar ASCII para cambiar valores a Mayúsculas
-lista4 = map(sum, (lista, lista3))
-print(lista4)
+lista_nueva = []
+
+#for x in lista:
+#    lista_nueva.append(lista[x] - lista_asc[x])
+
 
 
 #concatenando la lista
