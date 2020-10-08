@@ -14,7 +14,7 @@ python3 -m nombreDelArchivo.formato	--> Abre el python3 desde consola linux (tom
 :! python3 -m nombreDelArchivo.formato	--> Abre el python3 "desde vim" (tomando como referencia el archivo actual)
 u 					--> Volver (Es como el CTRL + Z de windows)
 CTRL + R				--> Rehacer (Es lo inverso de CTRL + Z de Windows)
-:'<,'>s/^/#                             --> Comentar mas de una línea
+:'<,'>s/^/#                             --> Comentar mas de una línea (Debe ser seleccionado el texto en modo visual usando "v")
  
 
 
