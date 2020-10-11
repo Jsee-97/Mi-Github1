@@ -1,0 +1,49 @@
+#Script Keep-alive
+#!bin/sh
+
+
+
+#Customer variables
+interval=3  			#Interval in Minutes [1 - ]
+user_retries=3			#Retries to restart modem
+server=http://google.com        #Server IP and Port Ex: 10.88.50.65:88 or http://google.com:80
+timeout=10                      #Timeout to connect to server
+
+
+#variables
+retries=1
+u=user_retries+1
+i="*/$interval * * * * sh /etc/rc.local"
+
+
+#writing to crontabs
+l=$(wc -l /etc/crontabs/root | head -c 1)
+
+if [ $l == 1 ]
+  then
+    #Adding Script to crontabs
+    sed -i.bak "s%$%\n$i%" /etc/crontabs/root
+  else
+    #Rewritring in case of customer changed parameters
+    sed -i "2s#.*#$i#" /etc/crontabs/root
+fi
+
+#loop Keep-alive
+while [ $retries != $u ];
+do
+  status=$(curl -LI $server -o /dev/null -w '%{http_code}' -s --connect-timeout $timeout)
+  if [ $status == "200" ]; 
+      then
+      logger Keep-alive TCP - Connected to Server
+      break;
+  elif [ $retries == $user_retries ];
+      then 
+      logger Attempt $retries, Modem is restarting...
+      #/etc/init.d/modem restart
+      break;
+  else
+      logger Keep-Alive TCP - Connection to server is broken. attempt $retries
+      let "retries++"
+  fi
+done
+exit 0
