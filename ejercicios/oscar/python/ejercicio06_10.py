@@ -74,5 +74,3 @@ print(f'\nLista en Caracteres usando la lista transformada:\n{result}')
 
 
 exit()
-
-
