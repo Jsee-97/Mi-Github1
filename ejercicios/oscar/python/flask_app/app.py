@@ -7,21 +7,23 @@ client = pymongo.MongoClient()
 
 collection = client.pessoa
 
-@app.route('/', methods = ['POST'])
+@app.route('/', methods = ['GET'])
 def hello_world():
     documento = {
             'data': 'Minha primeira API'
             }
     return flask.jsonify(documento)
 
-@app.route('/prueba', methods = ['POST'])
+@app.route('/prueba', methods = ['GET'])
 def get_all_documents():
     documentos = [
             {
                 'id': str(d.get('_id')),
-                'nome': d.get('nome'),
-                'idade': d.get('idade'),
-                'UF': d.get('UF')
+                'TS': d.get('TS'),
+                'D': d.get('D'),
+                'strength': d.get('strength'),
+                'mac': d.get('mac'),
+                'hostname': d.get('hostname')
 
             } for d in collection.pessoa.find()
         ]
@@ -34,6 +36,13 @@ def delete_by_name(nome):
         'nome' : str(nome)
     })
     return flask.jsonify({'message': 'registro eliminado'})
+
+@app.route('/wifi/insert', methods = ['POST'])
+def insert_wifi():
+    doc = flask.request.json
+    collection.pessoa.insert(doc)
+
+    return flask.jsonify({'mensagem': 'Ingresado com sucesso'})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

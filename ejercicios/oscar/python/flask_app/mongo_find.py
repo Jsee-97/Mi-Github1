@@ -4,7 +4,10 @@ from pymongo import MongoClient
 client = MongoClient()
 
 collection = client.pessoa
+count = 0
 
-res = collection.pessoa.find_one({'nome': 'Prueba'})
+for x in collection.pessoa.find({'TS': '1603141937'}):
+    count += 1
+    print(x, "\n")
 
-print(res)
+print('Tem', count, 'Dispositivos')
